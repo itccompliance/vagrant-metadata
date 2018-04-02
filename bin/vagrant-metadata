@@ -40,8 +40,9 @@ from vagrant_metadata import process_directory
 def main():
     args = parse_args()
 
-    if os.path.isfile("metadata.json"):
-        with open("metadata.json", "r") as f:
+    metadata_file_name = getattr(args, "metadata")
+    if os.path.isfile(metadata_file_name):
+        with open(metadata_file_name, "r") as f:
             metadata = json.load(f)
     else:
         # Seed the metadata.json file if missing
@@ -72,7 +73,7 @@ def main():
     else:
         metadata = local_metadata
 
-    with open("metadata.json", "w") as f:
+    with open(metadata_file_name, "w") as f:
         json.dump(metadata, f, indent=4)
 
 
@@ -83,6 +84,7 @@ def parse_args():
     args_parser.add_argument("-n", "--name", type=str)
     args_parser.add_argument("-u", "--baseurl", type=str)
     args_parser.add_argument("-a", "--append", action="store_true")
+    args_parser.add_argument("-mf", "--metadata", type=str, default='metadata.json')
 
     return args_parser.parse_args()
 

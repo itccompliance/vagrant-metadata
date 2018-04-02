@@ -1,11 +1,11 @@
 # vagrant-metadata
 
-<img src="https://rawgit.com/lvillani/vagrant-metadata/master/logo.svg" align="right" width="200" height="200"/>
+<img src="https://rawgit.com/itccompliance/vagrant-metadata/master/logo.svg" align="right" width="200" height="200"/>
 
 _Creates and updates Vagrant box metadata files (metadata.json)_
 
-[![Build Status](https://img.shields.io/travis/lvillani/vagrant-metadata.svg?style=flat)](https://travis-ci.org/lvillani/vagrant-metadata)
-[![Coverage Status](http://img.shields.io/coveralls/lvillani/vagrant-metadata.svg?style=flat)](https://coveralls.io/r/lvillani/vagrant-metadata)
+[![Build Status](https://img.shields.io/travis/itccompliance/vagrant-metadata.svg?style=flat)](https://travis-ci.org/itccompliance/vagrant-metadata)
+[![Coverage Status](http://img.shields.io/coveralls/itccompliance/vagrant-metadata.svg?style=flat)](https://coveralls.io/r/itccompliance/vagrant-metadata)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://choosealicense.com/licenses/mit/)
 
 --------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ Now let's go into the `precise64` directory:
 Since this is the first time we run `vagrant-metadata` we'll have to tell it something about the
 base box such as its URL, name and description:
 
-    vagrant-metadata --name="lvillani/precise64" --description="Ubuntu 12.04 64-bit" \
+    vagrant-metadata --name="lorenzo/precise64" --description="Ubuntu 12.04 64-bit" \
         --baseurl="http://lorenzo.villani.me/vagrant/precise64"
 
 After a while, when `vagrant-metadata` exits, you will find a fresh `metadata.json` file which
